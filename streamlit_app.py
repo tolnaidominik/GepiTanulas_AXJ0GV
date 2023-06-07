@@ -19,7 +19,7 @@ def user_input_features():
     ReviewDate = st.sidebar.slider('Review date', 1800, 1, 2023)
     REF = st.sidebar.slider('REF', 1, 1, 2000)
     
-    data = {'Review\nDate': ReviewDate,
+    data = {'ReviewDate': ReviewDate,
             'REF': REF
             }
     features = pd.DataFrame(data, index=[0])
@@ -32,7 +32,7 @@ st.subheader('Input parameters')
 st.write(df)
 
 # Create Plotly plot
-columns = ['Review\nDate', 'REF']
+columns = ['ReviewDate', 'REF']
 
 # create a new DataFrame with the selected columns
 df_game = df[columns]
