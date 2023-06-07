@@ -16,12 +16,12 @@ st.markdown(link, unsafe_allow_html=True)
 st.sidebar.header('Input Parameters')
 
 def user_input_features():
-    ReviewDate = st.sidebar.slider('Review date', 1, 1800, 2023)
     REF = st.sidebar.slider('REF', 1, 1, 2000)
+    ReviewDate = st.sidebar.slider('Review date', 1, 1800, 2023)
     CocoaPercent = st.sidebar.slider('Cocoa Percent', 1, 1, 100)
     
-    data = {'ReviewDate': ReviewDate,
-            'REF': REF,
+    data = {'REF': REF,
+            'ReviewDate': ReviewDate,
             'CocoaPercent': CocoaPercent
             }
     features = pd.DataFrame(data, index=[0])
@@ -34,7 +34,7 @@ st.subheader('Input parameters')
 st.write(df)
 
 # Create Plotly plot
-columns = ['ReviewDate', 'REF', 'CocoaPercent']
+columns = ['REF', 'ReviewDate', 'CocoaPercent']
 
 # create a new DataFrame with the selected columns
 df_game = df[columns]
